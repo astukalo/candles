@@ -7,7 +7,7 @@ Web socket client app
 ```
 - Run docker image
 ```
-docker run -it -p9099:8888 candles:0.0.1-SNAPSHOT
+docker run -it -p9099:8080 candles:0.0.1-SNAPSHOT
 ```
 - Send request to get candles
 ```

@@ -1,10 +1,11 @@
-package xyz.a5s7.candles.service;
+package xyz.a5s7.candles.domain;
 
 import org.junit.jupiter.api.Test;
 
 import java.time.ZonedDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MinuteTimeFrameTest {
     TimeFrames minuteFrame = TimeFrames.MINUTE;

@@ -1,8 +1,7 @@
-package xyz.a5s7.candles.client;
+package xyz.a5s7.candles.application.client;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.reactivestreams.Subscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -11,7 +10,7 @@ import org.springframework.web.reactive.socket.WebSocketMessage;
 import org.springframework.web.reactive.socket.WebSocketSession;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import xyz.a5s7.candles.service.CandleService;
+import xyz.a5s7.candles.domain.service.CandleService;
 
 @Component
 public class MarketDataHandler implements WebSocketHandler {

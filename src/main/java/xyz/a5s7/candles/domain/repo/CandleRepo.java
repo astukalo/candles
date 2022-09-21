@@ -1,6 +1,6 @@
-package xyz.a5s7.candles.repo;
+package xyz.a5s7.candles.domain.repo;
 
-import xyz.a5s7.candles.service.Candle;
+import xyz.a5s7.candles.domain.Candle;
 
 import java.util.Collection;
 

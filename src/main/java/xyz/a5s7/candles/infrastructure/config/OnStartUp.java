@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.config;
+package xyz.a5s7.candles.infrastructure.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -6,8 +6,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.socket.client.WebSocketClient;
-import xyz.a5s7.candles.client.MarketDataClient;
-import xyz.a5s7.candles.client.MarketDataHandler;
+import xyz.a5s7.candles.application.client.MarketDataClient;
+import xyz.a5s7.candles.application.client.MarketDataHandler;
 
 import java.net.URI;
 import java.net.URISyntaxException;

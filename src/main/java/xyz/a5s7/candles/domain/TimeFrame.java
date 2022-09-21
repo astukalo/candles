@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.service;
+package xyz.a5s7.candles.domain;
 
 import java.time.ZonedDateTime;
 

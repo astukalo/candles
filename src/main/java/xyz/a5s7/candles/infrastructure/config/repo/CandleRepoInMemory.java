@@ -1,9 +1,10 @@
-package xyz.a5s7.candles.repo;
+package xyz.a5s7.candles.infrastructure.config.repo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
-import xyz.a5s7.candles.service.Candle;
+import xyz.a5s7.candles.domain.Candle;
+import xyz.a5s7.candles.domain.repo.CandleRepo;
 
 import java.util.*;
 
@@ -15,7 +16,7 @@ public class CandleRepoInMemory implements CandleRepo {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     private final Map<String, Deque<Candle>> map = new HashMap<>();
-    private int maxSize = 100;
+    private final int maxSize = 100;
 
     @Override
     public void addCandle(String ticker, Candle candle) {

@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.service;
+package xyz.a5s7.candles.domain;
 
 import java.time.ZonedDateTime;
 import java.util.Objects;
@@ -6,9 +6,9 @@ import java.util.Objects;
 public class Candle {
     private final ZonedDateTime time;
     private final Double open;
-    private final Double high;
-    private final Double low;
-    private final Double close;
+    private Double high;
+    private Double low;
+    private Double close;
     private final String symbol;
 
     public Candle(ZonedDateTime time, Double open, Double high, Double low, Double close, String symbol) {
@@ -49,17 +49,18 @@ public class Candle {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Candle candle = (Candle) o;
-        return time.equals(candle.time) &&
-                open.equals(candle.open) &&
-                high.equals(candle.high) &&
-                low.equals(candle.low) &&
-                close.equals(candle.close) &&
-                symbol.equals(candle.symbol);
+        return time.equals(candle.time) && open.equals(candle.open) && symbol.equals(candle.symbol);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, open, high, low, close, symbol);
+        return Objects.hash(time, open, symbol);
+    }
+
+    public synchronized void updatePrice(Double price) {
+        this.low = Math.min(low, price);
+        this.high = Math.max(high, price);
+        this.close = price;
     }
 
     @Override

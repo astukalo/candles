@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.client;
+package xyz.a5s7.candles.application.client;
 
 import java.io.Serializable;
 import java.lang.Double;

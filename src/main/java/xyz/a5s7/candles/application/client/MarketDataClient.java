@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.client;
+package xyz.a5s7.candles.application.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,6 @@ public class MarketDataClient {
 
     private Disposable subscription;
     private final WebSocketHandler webSocketSessionHandler;
-
 
     public MarketDataClient(WebSocketHandler webSocketSessionHandler) {
         this.webSocketSessionHandler = webSocketSessionHandler;

@@ -1,4 +1,4 @@
-package xyz.a5s7.candles.service;
+package xyz.a5s7.candles.domain.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -6,13 +6,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import xyz.a5s7.candles.client.Tick;
-import xyz.a5s7.candles.repo.CandleRepo;
+import xyz.a5s7.candles.application.client.Tick;
+import xyz.a5s7.candles.domain.Candle;
+import xyz.a5s7.candles.domain.TimeFrames;
+import xyz.a5s7.candles.domain.repo.CandleRepo;
 
 import java.time.Instant;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
-import static xyz.a5s7.candles.service.MinuteCandleService.DEFAULT_TIMEZONE;
+import static xyz.a5s7.candles.domain.service.MinuteCandleService.DEFAULT_TIMEZONE;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -125,7 +127,7 @@ class MinuteCandleServiceTest {
                 candle(symbol, 10, timeFromLong(time - 165)),
                 candle(symbol, 12, timeFromLong(time - 65))
         );
-        Collection<Candle> expectedCollection = new LinkedHashSet<>(candleList);
+        Collection<Candle> expectedCollection = new ArrayList<>(candleList);
         expectedCollection.add(candle(symbol, price, timeFromLong(time)));
 
         when(candleRepo.getCandles(symbol)).thenReturn(
